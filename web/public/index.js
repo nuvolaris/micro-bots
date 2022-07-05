@@ -73,7 +73,7 @@ function check(args) {
         res = "<h1>Error: not deployed with <tt>-a provide-api-key true</tt>.</h1>"
     }
     else if (!("secret" in args) || args.secret == "") {
-        res = "<h1>Error: please set password with <tt>nuv a update -p secret your-password</tt>"
+        res = "<h1>Error: please set password with <tt>./nuv a update microbots -p secret <b>pick-your-password</b></tt>"
     }
     return res
 }

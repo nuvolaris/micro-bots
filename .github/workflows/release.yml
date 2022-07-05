@@ -38,11 +38,19 @@ jobs:
       uses: softprops/action-gh-release@v1
     - name: Download binaries
       run: bash package.sh "${{ github.ref }}"
-    - name: Upload binaries to release
+    - name: Upload binaries to release tgz
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: microbots-v*
+        file: microbots-v*.tar.gz
+        tag: ${{ github.ref }}
+        overwrite: true
+        file_glob: true
+    - name: Upload binaries to release zip
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: microbots-v*.zip
         tag: ${{ github.ref }}
         overwrite: true
         file_glob: true
