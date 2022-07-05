@@ -1,5 +1,5 @@
 index.zip
-skybattle.zip
+microbots.zip
 node_modules/
 .nimbella/
 .vscode/
@@ -10,3 +10,4 @@ attic/
 out.txt
 *.tar.gz
 *.zip
+robots/LICENSE.*

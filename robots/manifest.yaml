@@ -1,8 +1,8 @@
 packages:
   default:
     actions:
-      skybattle:
-        function: skybattle.zip
+      microbots:
+        function: microbots.zip
         runtime: nodejs:default
         web: true
         annotations:

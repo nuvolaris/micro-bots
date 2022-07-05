@@ -250,7 +250,7 @@
 
     battle.webinit(canvas.getContext("2d"), urls, startAngles, startLives);
     ready = true;
-    msg = "May the best win!";
+    msg = "May the best micro-services win!";
     status = "Fighting!";
     fighting = true;
     battle.draw();
@@ -390,7 +390,7 @@
           <div class="column column-center column-offset">
             <h4>
               Welcome to
-              <b>Sky Battle</b>
+              <b>Micro-Bots</b>
               v{VERSION}
               <a target="_blank" href="license.html">(read license)</a>.
             </h4>

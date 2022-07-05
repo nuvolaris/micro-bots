@@ -3,8 +3,8 @@ const glob = require("glob")
 let res = "packages:\n"
 res += "  default:\n"
 res += "    actions:\n"
-res += "      skybattle:\n"
-res += "        function: skybattle.zip\n"
+res += "      microbots:\n"
+res += "        function: microbots.zip\n"
 res += "        runtime: nodejs:default\n"
 res += "        web: true\n"
 res += "        annotations:\n"
@@ -14,7 +14,7 @@ res += "          secret:\n"
 res += "            value: ${SECRET}\n"
 
 
-let folders = glob.sync("../skybattle-robots/*")
+let folders = glob.sync("../robots/*")
 for(let folder of folders) {
     //let folder = folders[0]
     let files = glob.sync(folder+"/*.{js,py,go}")

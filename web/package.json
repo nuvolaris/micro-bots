@@ -7,7 +7,7 @@
     "start": "sirv public",
     "start2": "sirv public -H 192.168.0.68",
     "validate": "svelte-check",
-    "manifest": "node indexer.js >../skybattle-robots/manifest.yaml"
+    "manifest": "node indexer.js >../robots/manifest.yaml"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",

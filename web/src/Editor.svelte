@@ -1,7 +1,6 @@
 <script lang="ts">
   import { ow } from "./store";
   import { source } from "./store";
-  import { rumbleSave } from "./rumble";
 
   import CodeMirror from "codemirror";
   import "codemirror/mode/javascript/javascript";
@@ -62,7 +61,6 @@
     $ow.save($source, code, true).then(() => {
       source.set("");
     });
-    await rumbleSave(`${$ow.namespace}:${$source}`, code);
   }
 
   function help() {

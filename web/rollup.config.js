@@ -36,7 +36,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		dir: 'public/api/v1/web/nuvolaris/default/skybattle/build'
+		dir: 'public/api/v1/web/nuvolaris/default/microbots/build'
 	},
 	plugins: [
 		postcss(),
