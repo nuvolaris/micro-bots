@@ -1,22 +1,15 @@
-# Welcome to SkyBattle
+# Welcome to Microbots
 
-SkyBattle is a programming game. You have to write the code to program a robot fighting agaist another robot.
 
-The engine runs in Kubernetes or in Docker, and every robot controller is a micro-service running in Kubernetes.
+MicroBots is a programming game. You have to write a micro-service to control a robot fighting agaist another robot.
 
-You need either a Kubernetes cluster or a local Docker instance.
+The engine runs either in Docker on in Kubernetes.
+
+## Installation
 
 Download and unpack the distribution appropriate for you operating system and architecture.
 
-If you have a local Docker Desktop you need to setup Nuvolaris with:
-
-```
-./nuv setup --devcluster
-````
-
-then you can install SkyBattle.  You need two steps.
-
-First, you have to set the environment variable with a password to access it. Use:
+Now you have to set the environment variable with a password to access it. Use:
 
 ```
 # command for Mac and Linux
@@ -25,17 +18,27 @@ export SECRET=<your-password>
 set SECRET=<your-password>
 ```
 
-Then install skybattle with:
+If you have a local Docker Desktop you can now setup Nuvolaris and Deploy Microbots with:
 
 ```
-./nuv project deploy
+./nuv setup --devcluster
+````
+
+If instead you have a Kubernetes configured with Kubectl that also supports a Load Balancer, use:
+
+```
+./nuv setup --context=<context> --apihost=auto
 ```
 
-Finally get the url with 
+You can use `./nuv setup` to discover the name of your context if you have only one.
 
+
+It will take a while but in the end Microbots will be deployed.
+
+You can get the url to access the Battlefield it with:
 
 ```
-./nuv url skybattle
+./nuv url microbots
 ```
 
-Go to that url and start playing.
+Open the shown url, use your password to access it and code your robots.
