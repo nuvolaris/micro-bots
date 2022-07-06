@@ -1,8 +1,10 @@
 #!/bin/bash
 cd "$(dirname $0)"
 rm -f microbots.zip
-bash mkdoc.sh API.md help.html "Help"
-bash mkdoc.sh LICENSE.md license.html "License"
+if which pandoc; then
+ bash mkdoc.sh API.md help.html "Help"
+ bash mkdoc.sh LICENSE.md license.html "License"
+fi
 pushd web
 npm install
 npm run manifest
