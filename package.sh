@@ -1,6 +1,6 @@
 TAG="${1:?version}"
 VER="${TAG#refs/*/}"
-PRE="https://github.com/nuvolaris/nuvolaris-cli/releases/download"
+PRE="https://github.com/nuvolaris/nuvolaris/releases/download"
 
 #windows
 wget -nc $PRE/$VER/nuv-$VER-windows-amd64.zip
