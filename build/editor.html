@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="lib/codemirror.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="lib/codemirror.min.js"></script>
+    <script src="lib/mode/javascript/javascript.min.js"></script>
+    <script src="lib/mode/python/python.min.js"></script>
+    <script src="lib/mode/go/go.min.js"></script>
+</head>
+
+<body style="margin: 2px">
+    <textarea id="editor" style="height: 500px; width: 99%; border: 1px solid black;" name="editor"></textarea>
+</body>
+<script>
+
+    let modemap = {
+        "js": "javascript",
+        "go": "go",
+        "py": "python"
+    }
+
+    let editor = undefined
+
+    function setValue(filename, text) {
+        if (!editor) {
+            editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                lineNumbers: true
+            }
+            )
+        }
+        let mode = modemap[filename.split(".").pop()];
+    
+        if (mode)
+            editor.setOption("mode", mode)
+        if (text)
+            editor.setValue(text)
+    }
+
+    function getValue() {
+        return editor ? editor.getValue() : ""
+    };
+
+</script>
+
+</html>

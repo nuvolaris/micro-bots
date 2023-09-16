@@ -1,0 +1,42 @@
+packages:
+    dmnized:
+        actions:
+            botmamba_:
+                function: dmnized/botmamba_.js
+                web: true
+            botmamba___:
+                function: dmnized/botmamba___.js
+                web: true
+            botmamba____:
+                function: dmnized/botmamba____.js
+                web: true
+    fvalle1:
+        actions:
+            darkbot:
+                function: fvalle1/darkbot.py
+                web: true
+    michelecurci:
+        actions:
+            Cortex:
+                function: michelecurci/Cortex.py
+                web: true
+            Cortex2:
+                function: michelecurci/Cortex2.py
+                web: true
+    msciabarra:
+        actions:
+            BackAndForth:
+                function: msciabarra/BackAndForth.js
+                web: true
+            LookAndShot:
+                function: msciabarra/LookAndShot.js
+                web: true
+            LookAround:
+                function: msciabarra/LookAround.js
+                web: true
+            RandomTurn:
+                function: msciabarra/RandomTurn.js
+                web: true
+            Terminator:
+                function: msciabarra/Terminator.js
+                web: true
