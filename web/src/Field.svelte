@@ -114,7 +114,10 @@
   }
 
   async function updateBots() {
-    let res = await fetch(base + "/robots").then((j) => j.json());
+    console.log(apihost);
+    let res = await fetch(
+      `${apihost}/api/v1/web/nuvolaris/default/robots`
+    ).then((j) => j.json());
     enemyBots = res;
     cyanBots = Object.assign([], enemyBots);
     cyanBots.sort(() => 0.5 - Math.random());
@@ -231,7 +234,7 @@
         ? myBot
         : $ow.namespace + "/default/" + myBot.split(".")[0];
 
-    let champExtraLives = 0
+    let champExtraLives = 0;
 
     let enemy = enemyBot;
     let enemyExtraLives = 0;
@@ -306,7 +309,7 @@
       <div class="row">
         <div class="column column-left column-offset">
           {#if $ow === undefined}
-            <label for="mybot">Cyan Fighter</label>
+            <label for="mybot">Cyan Fighter {myBots.length}</label>
             <select bind:value={myBot} id="enemy">
               {#each filteredCyanBots as enemy}
                 <option value={enemy.url}>{enemy.name}</option>
@@ -351,7 +354,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="column column-left column-offset">
+        <!-- <div class="column column-left column-offset">
           {#if $ow === undefined}
             {#if logging}
               <form on:submit|preventDefault={login}>
@@ -378,8 +381,11 @@
               >
             </div>
           {/if}
-        </div>
-        <div class="column column-right">
+        </div> -->
+        <div
+          class="column column-center column-offset"
+          style="text-align: center;"
+        >
           <button id="done" disabled={!canStartBattle} on:click={selected}
             >Start the Battle</button
           >

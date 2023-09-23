@@ -11,7 +11,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
 	let server;
-	
+
 	function toExit() {
 		if (server) server.kill(0);
 	}
@@ -36,7 +36,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		dir: 'public/api/v1/web/nuvolaris/default/microbots/build'
+		dir: 'public/microbots/build'
 	},
 	plugins: [
 		postcss(),

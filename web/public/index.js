@@ -26,16 +26,16 @@ function isBinary(file) {
 // replace base in html and css
 function replaceBase(path, body) {
     // filter .html
-    if(!path.endsWith(".html"))
+    if (!path.endsWith(".html"))
         return body
     // calculate toReplace    
     let a = process.env['__OW_ACTION_NAME'].split("/")
-    if(a.length == 3) a.splice(-1, 0, "default")
+    if (a.length == 3) a.splice(-1, 0, "default")
     let toReplace = a.join("/");
     // replace all
     let toFind = '/nuvolaris/default/skybattle'
-    if(toFind!=toReplace)
-        while(body.indexOf(toFind) != -1)
+    if (toFind != toReplace)
+        while (body.indexOf(toFind) != -1)
             body = body.replace(toFind, toReplace)
     return body
 }
@@ -43,14 +43,14 @@ function replaceBase(path, body) {
 function body(path) {
     let file = `${__dirname}${path}`
     if (!fs.existsSync(file)) {
-        console.log("cannot find "+file)
+        console.log("cannot find " + file)
         return {
             body: "<h1>504 not found</h1>",
             statusCode: 504
         }
     }
     let data = fs.readFileSync(file)
-    if(isBinary(path)) 
+    if (isBinary(path))
         return {
             body: data.toString("base64"),
             statusCode: 200,
@@ -82,9 +82,9 @@ function check(args) {
 const openwhisk = require("openwhisk")
 
 function isNimbot(a) {
-    for(let kv of a.annotations) {
+    for (let kv of a.annotations) {
         //console.log(kv)
-        if(kv.key == "nimbot")
+        if (kv.key == "nimbot")
             return true
     }
     return false
@@ -92,14 +92,14 @@ function isNimbot(a) {
 
 function filter(r) {
     let res = []
-    for(let a of r) {
+    for (let a of r) {
         console.log(a)
-        if(! isNimbot(a))
+        if (!isNimbot(a))
             continue
-        let namespace = a.namespace 
+        let namespace = a.namespace
         let package = namespace.split("/")
-        if(package.length <2)
-          continue
+        if (package.length < 2)
+            continue
 
         let name = `${package[1]}/${a.name}`
         let url = `${namespace}/${a.name}`
@@ -111,11 +111,11 @@ function filter(r) {
     }
     return res
 }
- 
+
 function main(args) {
     // check parametes
     res = check(args)
-    if (res!="") {
+    if (res != "") {
         return { "body": res }
     }
     let path = args['__ow_path'];
@@ -130,23 +130,23 @@ function main(args) {
             }
         }
     }/**/
-    if(path == "/robots") {
+    if (path == "/robots") {
         let ow = openwhisk()
         return ow.actions.list()
-        .then(r => ({body: filter(r)}))
+            .then(r => ({ body: filter(r) }))
     }
     // check login
     if (path == "/login") {
         res = { "error": "wrong password" }
         if (args.password && args.password == args.secret)
             res = { "token": process.env["__OW_API_KEY"] }
-        return { 
+        return {
             "body": res
         }
     }
     // send body
     if (path != "") {
-        return body(path) 
+        return body(path)
     }
     // return redirect if no path
     return { "body": `<script>location.href += "/index.html"</script>` }

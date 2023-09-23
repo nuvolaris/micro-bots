@@ -9,7 +9,7 @@
   import { source } from "./store";
 
   // shared openwhisk
-  
+
   // calculate api server location from the url
   let url = new URL(location.href);
   // remove the index.html
@@ -20,7 +20,7 @@
   // if the location.host is localhost:5000 you are in development mode
   // you need a surgery to contact the locally running openwhisk
   if (location.host == "localhost:5000") {
-    url.port = "3233";
+    url.port = "80";
   }
   // get base and apihost
   let base = url.href;
@@ -33,5 +33,5 @@
 {#if $source == ""}
   <Field {base} {namespace} {apihost} />
 {:else}
-  <Editor {base}/>
+  <Editor {base} />
 {/if}

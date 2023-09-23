@@ -1,123 +1,71 @@
 packages:
     default:
         actions:
-            microbots:
-                function: default/microbots.js.zip
-                runtime: nodejs:default
+            robots:
+                function: default/robots.js
                 web: true
-        inputs:
-            secret_couchdb_admin: $SECRET_COUCHDB_ADMIN
-            secret_couchdb_controller: $SECRET_COUCHDB_CONTROLLER
-            secret_couchdb_invoker: $SECRET_COUCHDB_INVOKER
-            secret_minio_admin: $SECRET_MINIO_ADMIN
-            secret_minio_nuvolaris: $SECRET_MINIO_NUVOLARIS
-            secret_mongodb_admin: $SECRET_MONGODB_ADMIN
-            secret_mongodb_nuvolaris: $SECRET_MONGODB_NUVOLARIS
-            secret_openwhisk_nuvolaris: $SECRET_OPENWHISK_NUVOLARIS
-            secret_openwhisk_system: $SECRET_OPENWHISK_SYSTEM
-            secret_postgres_admin: $SECRET_POSTGRES_ADMIN
-            secret_postgres_nuvolaris: $SECRET_POSTGRES_NUVOLARIS
-            secret_postgres_replica: $SECRET_POSTGRES_REPLICA
-            secret_redis_default: $SECRET_REDIS_DEFAULT
-            secret_redis_nuvolaris: $SECRET_REDIS_NUVOLARIS
+                annotations:
+                    provide-api-key: true
     dmnized:
         actions:
             botmamba_:
                 function: dmnized/botmamba_.js
                 web: true
+                annotations:
+                    nimbot: true
             botmamba___:
                 function: dmnized/botmamba___.js
                 web: true
+                annotations:
+                    nimbot: true
             botmamba____:
                 function: dmnized/botmamba____.js
                 web: true
-        inputs:
-            secret_couchdb_admin: $SECRET_COUCHDB_ADMIN
-            secret_couchdb_controller: $SECRET_COUCHDB_CONTROLLER
-            secret_couchdb_invoker: $SECRET_COUCHDB_INVOKER
-            secret_minio_admin: $SECRET_MINIO_ADMIN
-            secret_minio_nuvolaris: $SECRET_MINIO_NUVOLARIS
-            secret_mongodb_admin: $SECRET_MONGODB_ADMIN
-            secret_mongodb_nuvolaris: $SECRET_MONGODB_NUVOLARIS
-            secret_openwhisk_nuvolaris: $SECRET_OPENWHISK_NUVOLARIS
-            secret_openwhisk_system: $SECRET_OPENWHISK_SYSTEM
-            secret_postgres_admin: $SECRET_POSTGRES_ADMIN
-            secret_postgres_nuvolaris: $SECRET_POSTGRES_NUVOLARIS
-            secret_postgres_replica: $SECRET_POSTGRES_REPLICA
-            secret_redis_default: $SECRET_REDIS_DEFAULT
-            secret_redis_nuvolaris: $SECRET_REDIS_NUVOLARIS
+                annotations:
+                    nimbot: true
     fvalle1:
         actions:
             darkbot:
                 function: fvalle1/darkbot.py
                 web: true
-        inputs:
-            secret_couchdb_admin: $SECRET_COUCHDB_ADMIN
-            secret_couchdb_controller: $SECRET_COUCHDB_CONTROLLER
-            secret_couchdb_invoker: $SECRET_COUCHDB_INVOKER
-            secret_minio_admin: $SECRET_MINIO_ADMIN
-            secret_minio_nuvolaris: $SECRET_MINIO_NUVOLARIS
-            secret_mongodb_admin: $SECRET_MONGODB_ADMIN
-            secret_mongodb_nuvolaris: $SECRET_MONGODB_NUVOLARIS
-            secret_openwhisk_nuvolaris: $SECRET_OPENWHISK_NUVOLARIS
-            secret_openwhisk_system: $SECRET_OPENWHISK_SYSTEM
-            secret_postgres_admin: $SECRET_POSTGRES_ADMIN
-            secret_postgres_nuvolaris: $SECRET_POSTGRES_NUVOLARIS
-            secret_postgres_replica: $SECRET_POSTGRES_REPLICA
-            secret_redis_default: $SECRET_REDIS_DEFAULT
-            secret_redis_nuvolaris: $SECRET_REDIS_NUVOLARIS
+                annotations:
+                    nimbot: true
     michelecurci:
         actions:
             Cortex:
                 function: michelecurci/Cortex.py
                 web: true
+                annotations:
+                    nimbot: true
             Cortex2:
                 function: michelecurci/Cortex2.py
                 web: true
-        inputs:
-            secret_couchdb_admin: $SECRET_COUCHDB_ADMIN
-            secret_couchdb_controller: $SECRET_COUCHDB_CONTROLLER
-            secret_couchdb_invoker: $SECRET_COUCHDB_INVOKER
-            secret_minio_admin: $SECRET_MINIO_ADMIN
-            secret_minio_nuvolaris: $SECRET_MINIO_NUVOLARIS
-            secret_mongodb_admin: $SECRET_MONGODB_ADMIN
-            secret_mongodb_nuvolaris: $SECRET_MONGODB_NUVOLARIS
-            secret_openwhisk_nuvolaris: $SECRET_OPENWHISK_NUVOLARIS
-            secret_openwhisk_system: $SECRET_OPENWHISK_SYSTEM
-            secret_postgres_admin: $SECRET_POSTGRES_ADMIN
-            secret_postgres_nuvolaris: $SECRET_POSTGRES_NUVOLARIS
-            secret_postgres_replica: $SECRET_POSTGRES_REPLICA
-            secret_redis_default: $SECRET_REDIS_DEFAULT
-            secret_redis_nuvolaris: $SECRET_REDIS_NUVOLARIS
+                annotations:
+                    nimbot: true
     msciabarra:
         actions:
             BackAndForth:
                 function: msciabarra/BackAndForth.js
                 web: true
+                annotations:
+                    nimbot: true
             LookAndShot:
                 function: msciabarra/LookAndShot.js
                 web: true
+                annotations:
+                    nimbot: true
             LookAround:
                 function: msciabarra/LookAround.js
                 web: true
+                annotations:
+                    nimbot: true
             RandomTurn:
                 function: msciabarra/RandomTurn.js
                 web: true
+                annotations:
+                    nimbot: true
             Terminator:
                 function: msciabarra/Terminator.js
                 web: true
-        inputs:
-            secret_couchdb_admin: $SECRET_COUCHDB_ADMIN
-            secret_couchdb_controller: $SECRET_COUCHDB_CONTROLLER
-            secret_couchdb_invoker: $SECRET_COUCHDB_INVOKER
-            secret_minio_admin: $SECRET_MINIO_ADMIN
-            secret_minio_nuvolaris: $SECRET_MINIO_NUVOLARIS
-            secret_mongodb_admin: $SECRET_MONGODB_ADMIN
-            secret_mongodb_nuvolaris: $SECRET_MONGODB_NUVOLARIS
-            secret_openwhisk_nuvolaris: $SECRET_OPENWHISK_NUVOLARIS
-            secret_openwhisk_system: $SECRET_OPENWHISK_SYSTEM
-            secret_postgres_admin: $SECRET_POSTGRES_ADMIN
-            secret_postgres_nuvolaris: $SECRET_POSTGRES_NUVOLARIS
-            secret_postgres_replica: $SECRET_POSTGRES_REPLICA
-            secret_redis_default: $SECRET_REDIS_DEFAULT
-            secret_redis_nuvolaris: $SECRET_REDIS_NUVOLARIS
+                annotations:
+                    nimbot: true
